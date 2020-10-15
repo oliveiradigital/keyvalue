@@ -1,3 +1,4 @@
 django==3.1.1
 python-decouple==3.3
 djangorestframework==3.11.1
+dj_database_url==0.5.0

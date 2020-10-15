@@ -20,14 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('manage/', include('manage.urls')),
-    path('messages/', include('django_messages.urls')),
-    path('notifications/', include('pinax.notifications.urls', namespace='pinax_notifications')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('gallery/', include('gallery.urls')),
-    path('', include('accounts.urls')),
-    path('', include('offers.urls')),
-    path('', include('base.urls')),
-    path('', include('offers_order.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('', include('keyvalue.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites'
+    'django.contrib.sites',
+    'accounts',
+    'keyvalue',
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -143,10 +147,10 @@ STATIC_ROOT = config('STATIC_ROOT')
 MEDIA_ROOT = config('MEDIA_ROOT')
 
 EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
-EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')
 EMAIL_PORT = config('EMAIL_PORT', default=25)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
 EMAIL_USE_SSL = config('EMAIL_USE_SSL', default=False, cast=bool)
 EMAIL_TIMEOUT = config('EMAIL_TIMEOUT', default=None)
@@ -156,7 +160,7 @@ NOTIFICATION_BACKENDS = [
     ("email", config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')),
 ]
 
-DEFAULT_FROM_NAME = config('DEFAULT_FROM_NAME', default='Clube da Permuta')
+DEFAULT_FROM_NAME = config('DEFAULT_FROM_NAME', default='KeyValue API')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default=EMAIL_FROM)
 
 PHONENUMBER_DEFAULT_REGION = 'BR'
