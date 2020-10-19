@@ -8,10 +8,10 @@ You can subscribe and create account with no data with: `curl -X POST https://ke
 
 ### Store value
 
-`curl -X POST https://keyvalue.oliveiradigital.com.br/data/<key> -d "value=Somevalueasstringhere"`.
+`curl -X POST https://keyvalue.oliveiradigital.com.br/data/<key> -d "value=Somevalueasstringhere" -H "Authorization: Token <TokenFromLastStep>"`.
 
 At this point, the value sent as POST, will be available on `<key>`. To retrieve:
 
 ### Get value
 
-`curl -X GET https://keyvalue.oliveiradigital.com.br/data/<key>`. This will return the value like: `{success: True, value: "Somevalueasstringhere"}`.
+`curl -X GET https://keyvalue.oliveiradigital.com.br/data/<key> -H "Authorization: Token <TokenFromLastStep>"`. This will return the value like: `{success: True, value: "Somevalueasstringhere"}`.
